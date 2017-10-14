@@ -1,3 +1,17 @@
+## Fork notes
+
+Remove word feature + transform:
+
+```html
+<span class="char1">S</span>
+<span class="char2">o</span>
+```
+to
+
+```html
+<span class="char1">S</span><br /><span class="char1">S</span>
+<span class="char2">o</span><br /><span class="char2">S</span>
+```
 
 ## Lettering.js, a jQuery plugin for radical Web Typography
 [![CDNJS](https://img.shields.io/cdnjs/v/lettering.js.svg)](https://cdnjs.com/libraries/lettering.js)

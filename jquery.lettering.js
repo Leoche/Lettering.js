@@ -17,7 +17,7 @@
 		, inject = '';
 		if (a.length) {
 			$(a).each(function(i, item) {
-				inject += '<span class="'+klass+(i+1)+'" aria-hidden="true">'+item+'</span>'+after;
+				inject += '<span class="'+klass+(i+1)+'" aria-hidden="true">'+item+'<br />'+item+'</span>'+after;
 			});
 			t.attr('aria-label',text)
 			.empty()
@@ -26,35 +26,11 @@
 		}
 	}
 
-
 	var methods = {
 		init : function() {
-
 			return this.each(function() {
 				injector($(this), '', 'char', '');
 			});
-
-		},
-
-		words : function() {
-
-			return this.each(function() {
-				injector($(this), ' ', 'word', ' ');
-			});
-
-		},
-
-		lines : function() {
-
-			return this.each(function() {
-				var r = "eefec303079ad17405c889e092e105b0";
-				// Because it's hard to split a <br/> tag consistently across browsers,
-				// (*ahem* IE *ahem*), we replace all <br/> instances with an md5 hash
-				// (of the word "split").  If you're trying to use this plugin on that
-				// md5 hash string, it will fail because you're being ridiculous.
-				injector($(this).children("br").replaceWith(r).end(), r, 'line', '');
-			});
-
 		}
 	};
 
